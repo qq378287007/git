@@ -1,0 +1,92 @@
+cd git_study
+
+#查看仓库状态
+git status
+
+
+#初始化仓库，默认进入master分支
+git init
+
+
+#添加文件到临时缓冲区
+git add .
+
+#提交仓库
+git commit -m "text commit"
+
+#仓库日志
+git log
+
+
+#查看仓库分支
+git branch
+
+#创建a分支，目前仍在master分支
+git branch a
+
+#切换a分支
+git checkout a
+
+
+#创建且切换b分支
+git checkout -b b
+
+
+
+
+#a分支合并到master分支，有冲突则先解决
+git checkout master
+git merge a
+
+
+#删除a分支，可能失效（比如分支a代码未合并到主分支）
+git branch -d a
+
+
+#强制删除a分支
+it branch -D a
+
+#当前分支添加标签
+git tag v1.0
+
+
+#当前分支查看标签
+git tag
+
+#切换到当前分支指定标签
+git checkout v1.0
+
+#RSA算法生成密钥id_rsa和公钥id_rsa.pub
+ssh-keygen -t rsa
+#github ssh and gpg keys添加公钥
+#cat ~/.ssh/id_rsa.pub
+#验证Git和GitHub是否绑定成功
+ssh -T git@github.com
+
+
+#本地代码推到远程仓库
+git push origin master
+
+#远程仓库代码拉到本地
+git pull origin master
+
+
+
+#################
+git clone git@github.com:qq378287007/git.git
+git status
+git add
+git commit
+git push origin master
+#################
+
+
+
+#################
+git init
+#关联远程仓库
+git remote add origin git@github.com:qq378287007/git.git
+#同步远程仓库和本地仓库
+git pull origin master
+#本地提交到远程
+git push origin master
